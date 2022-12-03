@@ -12,6 +12,10 @@ module.exports = merge(common, {
     filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, "../dist"),
   },
+  devServer: {
+    hot: true,
+    historyApiFallback: true,
+  },
   module: {
     rules: [
       {
@@ -20,5 +24,5 @@ module.exports = merge(common, {
       },
     ],
   },
-  plugins: [new HtmlWebpackPlugin({ template: "./src/index.html" })],
+  plugins: [new HtmlWebpackPlugin({ template: "./public/index.html" })],
 });
